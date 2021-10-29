@@ -1,0 +1,106 @@
+Implement a function to multiple two numbers(they can be 100 digits) stored in two string:
+
+string MultipleBy(string op1, string op2)
+{
+
+}
+
+“12”
+“11” 
+
+“132”
+
+
+12 * 10 = 120
+
+339 * 125  = 42375
+
+9 * 5 + 9 * 20 + 9 * 300
+
+9: 9 * 5 + 9 * 20 + 9 * 100
+30: 30 * 5 + 30 * 20 + 30 * 100
+300: 300 * 5 + 300 * 20 + 300 * 100
+45, 180, 900 -> 1125
+3750
+37500
+
+12 * 10 = 120
+{
+    0: 0
+    1: 2
+    2: 8
+    3: 2
+}
+
+
+function calculateMultFactor(s1, s2) {
+}
+
+
+1234 + 9999
+
+Op1[len - 1] + Op2[len - 1] = res
+Carry = 1
+If res > 9
+Return res
+
+// M * N -> calculations
+// Let sumfactor = {}
+// could input be like “000123” ? or can i assume “123” ?
+
+function MultiplyBy(s1, s2) {
+
+Let resFactor = {}
+Let highestResFactor = 0
+    let ls1 = s1.length
+    let ls2 = s2.length
+    For(let i = 0; i < ls1; i++) {
+        For(let j = 0; i < ls2; i++) {
+		Let currFactor = (ls1 - 1 - j) + (ls2 - 1 - j)
+		Let product = s1[i] * s2[i]
+		// product (9*3) -> 27
+		// resFactor[2] === 9
+		// 
+
+		Let res = resFactor[currFactor] + product
+		// res->36 
+		Let currResfactor = resFactor
+            While(res > 0) {
+                // calculate the sum of product and base resfactor
+                // if there its above 9, want to reduce and carry
+                // 27 + 9 -> currResfactor=6, nextResfactor=nextResfactor + 30, repeat
+
+                res = resFactor[currFactor] + res
+
+                resFactor[currResfactor] = res % 10
+                res = Math.floor(res / 10)
+                currResfactor++
+
+            }
+            If(currResfactor > highestResFactor){
+                highestResFactor = currResfactor
+            }
+        }
+    }
+Let res = “”
+Let resLength = highestResFactor + 1
+    For(let k = 0; k < resLength; k++) {
+	Let curr = resFactor[k]
+        If(curr !== undefined){
+            res += string(curr)
+        } else {
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
