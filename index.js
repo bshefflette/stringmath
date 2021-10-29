@@ -35,18 +35,26 @@ function MultiplyBy(s1, s2) {
     return res
 }
 
+function Test1() {
 
 
-
-
-
-// console.log(MultiplyBy("12", "10"))
-// console.log(MultiplyBy("123", "456"))
-// console.log(MultiplyBy("123", "406"))
-// console.log(MultiplyBy("120322", "41"))
-// console.log(MultiplyBy("12322", "4"))
-// console.log(MultiplyBy("12322", "0"))
-
-
-
-
+    if (MultiplyBy("12", "10") !== "120") {
+        console.error("tests failed")
+    }
+    if (MultiplyBy("123", "456") !== "56088") {
+        console.error("tests failed")
+    }
+    if (MultiplyBy("123", "406") !== "49938") {
+        console.error("tests failed")
+    }
+    if (MultiplyBy("120322", "41") !== "4933202") {
+        console.error("tests failed")
+    }
+    if (MultiplyBy("12322", "4") !== "49288") {
+        console.error("tests failed")
+    }
+    if (MultiplyBy("12322", "0") !== "0") {
+        console.error("tests failed")
+    }
+    console.log("all tests passed")
+}
